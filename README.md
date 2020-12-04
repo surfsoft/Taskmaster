@@ -7,9 +7,6 @@ Taskmaster is (will be) capable of accepting a single task ('simple task'), or a
 it will then execute according to the information provided. Task execution is asynchronous, with the client providing 
 either a callback mechanism or a notification contact (e.g. an email address).
 
-For security reasons callbacks can only be made to the domain from which the task was received, and notifications can 
-only be sent to pre-registered and verified contacts. 
-
 In the simplest sense a simple task is a description of an HTTP request to be made on the client's behalf and can be 
 synchronous or asynchronous:
 - Synchronous: the response from the remote service is the 'result' of task execution
@@ -21,7 +18,10 @@ responses) from earlier tasks can be used as inputs to later tasks. Over time Ta
 complex task definitions, task templates, repeating tasks and other features.  
 
 Initially deployable as a stand-alone REST service, Taskmaster will eventually be capable of being embedded in your own 
-software. A public Taskmaster service is also anticipated.  
+software. 
+
+A public Taskmaster service is also anticipated. For security reasons callbacks will only be able to be made to the 
+domain from which the task was received, and notifications can only be sent to pre-registered and verified contacts. 
 
 ## Etymology
 The TV program Taskmaster was the inspiration for this task management engine since the tasks it passes out for 
